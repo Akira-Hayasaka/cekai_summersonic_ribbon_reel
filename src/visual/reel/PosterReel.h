@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include <array>
 #include <limits>
 
 #include "Constants.h"
@@ -73,35 +74,21 @@ public:
 		out_pos = glm::vec2(0, -18000);
 		cur_pos = active_pos;
 		lastUpdateTimeSec = Globals::timeline->getCurrentTimeSec();
-
-		ofAddListener(Globals::sequencer->keyframeEvent, this, &PosterReel::on_SequencerKeyframeEvent);
-	}
-
-	void on_SequencerKeyframeEvent(SequencerKeyframeEvent & e) {
-		if (e.trackName == "PosterReel") {
-			if (e.keyframeName == "in") {
-				in();
-			} else if (e.keyframeName == "spin") {
-				spin();
-			} else if (e.keyframeName == "stop") {
-				int yearInt = Globals::package["target_year"][0].get<int>();
-				// 例: 2005 -> 5, 2025 -> 25
-				int yearTwoDigit = yearInt % 100;
-				stop(yearTwoDigit);
-			} else if (e.keyframeName == "stoplast") {
-				auto lastidx = Globals::package["target_year"].size() - 1;
-				int yearInt = Globals::package["target_year"][lastidx].get<int>();
-				// 例: 2005 -> 5, 2025 -> 25
-				int yearTwoDigit = yearInt % 100;
-				stop(yearTwoDigit);
-			} else if (e.keyframeName == "out") {
-				out();
-			} 
-		}
+		spinTravelPx = calculateSpinTravel(spinDurationSec);
+		ensureSequencerDuration();
 	}
 
 	void update() {
 		float now = Globals::timeline->getCurrentTimeSec();
+		if (automaticSequenceEnabled) {
+			updateAutomaticSequence(now);
+			layoutYearsFromOffset();
+			for (auto& img : poster_imgs) {
+				img.update();
+			}
+			return;
+		}
+
 		float dt = now - lastUpdateTimeSec;
 		lastUpdateTimeSec = now;
 
@@ -167,6 +154,7 @@ public:
 	}
 
 	void in() {
+		automaticSequenceEnabled = false;
 		state = State::in;
 		inSec = Globals::timeline->getCurrentTimeSec();
 		inAnimating = true;
@@ -174,18 +162,21 @@ public:
 	}
 
 	void out() {
+		automaticSequenceEnabled = false;
 		state = State::out;
 		outSec = Globals::timeline->getCurrentTimeSec();
 		outAnimating = true;
 	}
 
 	void spin() {
+		automaticSequenceEnabled = false;
 		spinBlendBaseOffset = reelOffsetPx;
 		spinStartTimeSec = Globals::timeline->getCurrentTimeSec();
 		isSpinning = true;
 	}
 
 	void reset() {
+		automaticSequenceEnabled = true;
 		state                = State::idle;
 		inAnimating          = false;
 		outAnimating         = false;
@@ -202,13 +193,14 @@ public:
 		spinStartTimeSec     = 0.0f;
 		stopStartOffsetPx    = 0.0f;
 		stopEndOffsetPx      = 0.0f;
-		cur_pos              = idle_pos;
+		cur_pos              = active_pos;
 		lastUpdateTimeSec    = Globals::timeline->getCurrentTimeSec();
 		showAllPosters();
 		layoutYearsFromOffset();
 	}
 
 	void stop(const int tgt_year = 25) {
+		automaticSequenceEnabled = false;
 		const int searchYear = normalizeTargetYear(tgt_year);
 
 		PosterImg* target = nullptr;
@@ -252,6 +244,13 @@ public:
 	}
 
 private:
+	static constexpr int sequenceStartYear = 2000;
+	static constexpr int sequenceEndYear = 2025;
+	static constexpr int sequenceYearCount = sequenceEndYear - sequenceStartYear + 1;
+	static constexpr float sequenceStartSec = 0.0f;
+	static constexpr float spinDurationSec = 2.0f;
+	static constexpr float holdDurationSec = 2.0f;
+
 	int normalizeTargetYear(const int tgt_year) const {
 		// Accept 2-digit (00-99) or 4-digit (2000-2099) years.
 		return tgt_year < 100 ? 2000 + tgt_year : tgt_year;
@@ -283,6 +282,7 @@ private:
 	float spinStartTimeSec = 0.0f;
 	float spinAccelDurationSec = 0.5f;
 	float spinMaxSpeedPxPerSec = 9000.0f;
+	float spinTravelPx = 0.0f;
 	float maxInSpinBlendSpeedPxPerSec = 2400.0f;
 	float lastFrameDtSec = 1.0f / 60.0f;
 
@@ -298,8 +298,125 @@ private:
 	float stopStartOffsetPx = 0.0f;
 	float stopEndOffsetPx = 0.0f;
 	int extraStopLoops = 1;
+	bool automaticSequenceEnabled = true;
+	std::array<bool, sequenceYearCount> missingYearLogged{};
 
 	glm::vec2 idle_pos, active_pos, out_pos, cur_pos;
+
+	float getSequenceCycleDurationSec() const {
+		return spinDurationSec + stopDurationSec + holdDurationSec;
+	}
+
+	void ensureSequencerDuration() {
+		if (!Globals::sequencer) return;
+
+		const float durationSec = sequenceStartSec + getSequenceCycleDurationSec() * sequenceYearCount;
+		const int requiredEndFrame = static_cast<int>(std::ceil(durationSec * Globals::sequencer->timeline.fps));
+		Globals::sequencer->timeline.endFrame = std::max(
+			Globals::sequencer->timeline.endFrame,
+			static_cast<ImGui::FrameIndexType>(requiredEndFrame));
+	}
+
+	float calculateSpinTravel(float elapsedSec) const {
+		const float fixedStepSec = 1.0f / 240.0f;
+		float remaining = ofClamp(elapsedSec, 0.0f, spinDurationSec);
+		float simulatedSec = 0.0f;
+		float travelPx = 0.0f;
+
+		while (remaining > 0.0f) {
+			const float step = std::min(remaining, fixedStepSec);
+			simulatedSec += step;
+			const float t = ofClamp(simulatedSec / spinAccelDurationSec, 0.0f, 1.0f);
+			travelPx += spinMaxSpeedPxPerSec * ofxEasingFunc::Cubic::easeInOut(t) * step;
+			remaining -= step;
+		}
+		return travelPx;
+	}
+
+	bool calculateStopEndOffset(int targetYear, float startOffset, float& endOffset) {
+		PosterImg* target = nullptr;
+		for (auto& img : poster_imgs) {
+			if (img.getValue() == targetYear) {
+				target = &img;
+				break;
+			}
+		}
+
+		if (!target || poster_imgs.empty()) {
+			const int yearIndex = targetYear - sequenceStartYear;
+			if (yearIndex >= 0 && yearIndex < sequenceYearCount && !missingYearLogged[yearIndex]) {
+				ofLogWarning("PosterReel") << "Poster not found for year " << targetYear;
+				missingYearLogged[yearIndex] = true;
+			}
+			endOffset = startOffset;
+			return false;
+		}
+
+		const float period = spacing * static_cast<float>(poster_imgs.size());
+		const float minStopTravelPx = period * 0.25f;
+		float delta = (targetCenterY - target->getBaseY()) - startOffset;
+		while (delta >= -minStopTravelPx) {
+			delta -= period;
+		}
+		delta -= period * static_cast<float>(extraStopLoops);
+		endOffset = startOffset + delta;
+		return true;
+	}
+
+	void updateAutomaticSequence(float now) {
+		const float cycleDurationSec = getSequenceCycleDurationSec();
+		const float elapsedSec = std::max(0.0f, now - sequenceStartSec);
+		const float totalDurationSec = cycleDurationSec * sequenceYearCount;
+		const int completedCycles = std::min(
+			static_cast<int>(elapsedSec / cycleDurationSec),
+			sequenceYearCount);
+
+		float cycleStartOffset = 0.0f;
+		for (int yearIndex = 0; yearIndex < completedCycles; ++yearIndex) {
+			const float spinEndOffset = cycleStartOffset - spinTravelPx;
+			calculateStopEndOffset(sequenceStartYear + yearIndex, spinEndOffset, cycleStartOffset);
+		}
+
+		cur_pos = active_pos;
+		inAnimating = false;
+		outAnimating = false;
+		inSpinBlend = 1.0f;
+
+		if (elapsedSec >= totalDurationSec) {
+			reelOffsetPx = cycleStartOffset;
+			isSpinning = false;
+			state = State::idle;
+			return;
+		}
+
+		const int yearIndex = completedCycles;
+		const int targetYear = sequenceStartYear + yearIndex;
+		const float cycleElapsedSec = elapsedSec - cycleDurationSec * yearIndex;
+
+		if (cycleElapsedSec < spinDurationSec) {
+			reelOffsetPx = cycleStartOffset - calculateSpinTravel(cycleElapsedSec);
+			isSpinning = true;
+			state = State::idle;
+			return;
+		}
+
+		const float spinEndOffset = cycleStartOffset - spinTravelPx;
+		float targetOffset = spinEndOffset;
+		calculateStopEndOffset(targetYear, spinEndOffset, targetOffset);
+		isSpinning = false;
+
+		const float stoppingElapsedSec = cycleElapsedSec - spinDurationSec;
+		if (stoppingElapsedSec < stopDurationSec) {
+			const float t = ofClamp(stoppingElapsedSec / stopDurationSec, 0.0f, 1.0f);
+			const float eased = ofxEasingFunc::Expo::easeOut(t);
+			reelOffsetPx = spinEndOffset + (targetOffset - spinEndOffset) * eased;
+			state = State::stop;
+			return;
+		}
+
+		reelOffsetPx = targetOffset;
+		state = State::idle;
+	}
 
 	void updateIn(float now) {
 		float t = ofClamp((now - inSec) / inDurationSec, 0.0f, 1.0f);
