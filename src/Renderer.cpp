@@ -94,10 +94,10 @@ Renderer::Renderer()
 	settings.width = Constants::APP_W;
 	settings.height = Constants::APP_H;
 	settings.numSamples = 4;
-	// Critical: enable RGBA to support alpha blending within FBO
-	settings.internalformat = GL_RGBA;
+	// Use an explicit 8-bit RGBA render target so the exported frame contains alpha.
+	settings.internalformat = GL_RGBA8;
 	ofLog() << "width: " << settings.width << ", height: " << settings.height
-			<< ", numSamples: " << settings.numSamples << ", internalFormat: GL_RGBA";
+			<< ", numSamples: " << settings.numSamples << ", internalFormat: GL_RGBA8";
 	screen_fbo.allocate(settings);
 }
 
@@ -122,8 +122,14 @@ void Renderer::open_screen_fbo()
 	screen_fbo.begin();
 	// Clear with alpha=0 for transparency support
 	ofClear(0, 0, 0, 0);
-	// Ensure alpha blending is active within FBO
+	// Accumulate alpha correctly while rendering into the transparent FBO.
+	// RGB remains premultiplied, which matches Renderer::draw().
 	ofEnableBlendMode(OF_BLENDMODE_ALPHA);
+	glBlendFuncSeparate(
+		GL_SRC_ALPHA,
+		GL_ONE_MINUS_SRC_ALPHA,
+		GL_ONE,
+		GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void Renderer::close_screen_fbo()
@@ -289,7 +295,9 @@ void Renderer::feed_to_pipe(const float* interleaved_audio, const uint32_t audio
 
 	ofPixels px;
 	screen_fbo.readToPixels(px);
-	px.setImageType(OF_IMAGE_COLOR);
+	// Keep the FBO's alpha channel. Converting to OF_IMAGE_COLOR here would
+	// discard alpha before the pixels reach ffmpeg.
+	px.setImageType(OF_IMAGE_COLOR_ALPHA);
 
 	const size_t video_bytes = px.size();
 	const size_t bytes_written = fwrite(px.getData(), 1, video_bytes, ffmpeg_pipe);
@@ -341,21 +349,14 @@ void Renderer::feed_to_pipe()
 const std::string Renderer::get_ffmpeg_cmd(
 	const int w, const int h, const float fps, const std::string vid_name)
 {
-	// return "ffmpeg -y -f rawvideo -pix_fmt rgb24 -s " +
-	// 	std::to_string(w) + "x" +
-	// 	std::to_string(h) + " -r " +
-	// 	ofToString(fps, 2) +
-	// 	" -i - -c:v libx265 -preset fast -crf 18 -pix_fmt yuv420p " +
-	// 	quote_path(vid_name);
-
 	return
 	"ffmpeg -y "
 	"-f rawvideo "
-	"-pix_fmt rgb24 "
+	"-pix_fmt rgba "
 	"-video_size " + std::to_string(w) + "x" + std::to_string(h) + " "
 	"-framerate " + ofToString(fps, 6) + " "
 	"-i pipe:0 "
 	"-c:v rawvideo "
-	"-pix_fmt rgb24 " +
+	"-pix_fmt rgba " +
 	quote_path(vid_name);
 }
