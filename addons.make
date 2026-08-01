@@ -1,0 +1,8 @@
+ofxGui
+ofxOsc
+addons/ofxPubSubOsc
+addons/rxcpp
+addons/ofxEasingFunc
+addons/ofxImGui
+addons/ofxExtremeGpuVideo
+addons/ofxAutoReloadedShader

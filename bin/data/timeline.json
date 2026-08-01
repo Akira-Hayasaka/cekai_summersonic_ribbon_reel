@@ -1,0 +1,235 @@
+{
+  "currentFrame": 0,
+  "endFrame": 3930,
+  "fps": 60.0,
+  "startFrame": 0,
+  "tracks": [
+    {
+      "keys": [
+        {
+          "ease": 0,
+          "frame": 70,
+          "name": "in",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 81,
+          "name": "spin",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 136,
+          "name": "stop",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 173,
+          "name": "fadeout",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 3480,
+          "name": "stoplast",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 3717,
+          "name": "spin",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 3736,
+          "name": "out",
+          "value": 0.0
+        }
+      ],
+      "name": "YearReel",
+      "open": true
+    },
+    {
+      "keys": [
+        {
+          "ease": 0,
+          "frame": 70,
+          "name": "in",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 70,
+          "name": "spin",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 136,
+          "name": "stop",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 3480,
+          "name": "stoplast",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 3717,
+          "name": "spin",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 3736,
+          "name": "out",
+          "value": 0.0
+        }
+      ],
+      "name": "PosterReel",
+      "open": true
+    },
+    {
+      "keys": [
+        {
+          "ease": 0,
+          "frame": 139,
+          "name": "out",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 140,
+          "name": "in",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 140,
+          "name": "spin",
+          "value": 0.0
+        }
+      ],
+      "name": "HeadlinerReel",
+      "open": true
+    },
+    {
+      "keys": [
+        {
+          "ease": 0,
+          "frame": 136,
+          "name": "in",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 3653,
+          "name": "in_custom",
+          "value": 0.0
+        }
+      ],
+      "name": "CamZoom",
+      "open": true
+    },
+    {
+      "keys": [
+        {
+          "ease": 0,
+          "frame": 280,
+          "name": "in",
+          "value": 0.0
+        }
+      ],
+      "name": "Transition",
+      "open": true
+    },
+    {
+      "keys": [
+        {
+          "ease": 0,
+          "frame": 5,
+          "name": "fade_in",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 60,
+          "name": "out",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 3792,
+          "name": "in",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 3900,
+          "name": "fade_out",
+          "value": 0.0
+        }
+      ],
+      "name": "InfoText",
+      "open": true
+    },
+    {
+      "keys": [
+        {
+          "ease": 0,
+          "frame": 417,
+          "name": "hide",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 3476,
+          "name": "",
+          "value": 0.0
+        },
+        {
+          "ease": 0,
+          "frame": 3480,
+          "name": "show",
+          "value": 0.0
+        }
+      ],
+      "name": "Reel",
+      "open": true
+    },
+    {
+      "keys": [
+        {
+          "ease": 0,
+          "frame": 60,
+          "name": "spin",
+          "value": 0.0
+        }
+      ],
+      "name": "BG",
+      "open": true
+    },
+    {
+      "keys": [
+        {
+          "ease": 0,
+          "frame": 3653,
+          "name": "make_reel_front",
+          "value": 0.0
+        }
+      ],
+      "name": "Visual",
+      "open": true
+    },
+    {
+      "keys": [],
+      "name": "Twist",
+      "open": true
+    }
+  ]
+}

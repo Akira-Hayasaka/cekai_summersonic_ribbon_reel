@@ -1,0 +1,967 @@
+{
+  "headlinerDuration": 2.5,
+  "2000": {
+    "poster": {
+      "path": "00.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "00_d1_JSB_v4",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:00",
+        "draw_scale": 1.0,
+        "name": "THE JON SPENCER BLUES EXPLOSION",
+        "artistname_viewpadding": {
+          "left": 69.0,
+          "bottom": 45.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "00_d2_GD",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:06",
+        "draw_scale": 1.0,
+        "name": "GREEN DAY",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 27.0
+        }
+      }
+    }
+  },
+  "2001": {
+    "poster": {
+      "path": "01.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "01_d1_beck_v4",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:00",
+        "draw_scale": 1.0,
+        "name": "BECK",
+        "artistname_viewpadding": {
+          "left": 63.0,
+          "bottom": 62.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "01_d2_mm",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:02:00",
+        "draw_scale": 1.0,
+        "name": "MARILYN MANSON",
+        "artistname_viewpadding": {
+          "left": 68.0,
+          "bottom": 31.0
+        }
+      }
+    }
+  },
+  "2002": {
+    "poster": {
+      "path": "02.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "img",
+        "path": "02_d1_gnr",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": 2.0,
+        "draw_scale": 1.0,
+        "name": "GUNS N ROSES",
+        "artistname_viewpadding": {
+          "left": 61.0,
+          "bottom": 62.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "02_d2_offspring_v4",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:00",
+        "draw_scale": 1.0,
+        "name": "THE OFFSPRING",
+        "artistname_viewpadding": {
+          "left": 77.0,
+          "bottom": 52.0
+        }
+      }
+    }
+  },
+  "2003": {
+    "poster": {
+      "path": "03.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "03_d1_blur",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:04:15",
+        "draw_scale": 1.0,
+        "name": "BLUR",
+        "artistname_viewpadding": {
+          "left": 73.0,
+          "bottom": 56.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "03_d2_radiohead_v4",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:00",
+        "draw_scale": 1.0,
+        "name": "RADIOHEAD",
+        "artistname_viewpadding": {
+          "left": 76.0,
+          "bottom": 83.0
+        }
+      }
+    }
+  },
+  "2004": {
+    "poster": {
+      "path": "04.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "04_d1_GD_v4",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:00",
+        "draw_scale": 1.0,
+        "name": "GREEN DAY",
+        "artistname_viewpadding": {
+          "left": 57.0,
+          "bottom": 71.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "04_d2_BB",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:04:40",
+        "draw_scale": 1.0,
+        "name": "BEASTIE BOYS",
+        "artistname_viewpadding": {
+          "left": 77.0,
+          "bottom": 87.0
+        }
+      }
+    }
+  },
+  "2005": {
+    "poster": {
+      "path": "05.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "05_d1_NIN",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:03:00",
+        "draw_scale": 1.0,
+        "name": "NINE INCH NAILS",
+        "artistname_viewpadding": {
+          "left": 62.0,
+          "bottom": 63.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "05_d2_Oasis",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:03:00",
+        "draw_scale": 1.0,
+        "name": "OASIS",
+        "artistname_viewpadding": {
+          "left": 59.0,
+          "bottom": 60.0
+        }
+      }
+    }
+  },
+  "2006": {
+    "poster": {
+      "path": "06.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "06_d1_Metalica",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:01:50",
+        "draw_scale": 1.0,
+        "name": "METALLICA",
+        "artistname_viewpadding": {
+          "left": 24.0,
+          "bottom": 25.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "06_d2_LP_v2",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:08:30",
+        "draw_scale": 1.0,
+        "name": "LINKIN PARK",
+        "artistname_viewpadding": {
+          "left": 62.0,
+          "bottom": 62.0
+        }
+      }
+    }
+  },
+  "2007": {
+    "poster": {
+      "path": "07.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "07_d1_BEP",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:40",
+        "draw_scale": 1.0,
+        "name": "BLACK EYED PEAS",
+        "artistname_viewpadding": {
+          "left": 59.0,
+          "bottom": 26.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "07_d2_AM",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:02:25",
+        "draw_scale": 1.0,
+        "name": "ARCTIC MONKEYS",
+        "artistname_viewpadding": {
+          "left": 59.0,
+          "bottom": 59.0
+        }
+      }
+    }
+  },
+  "2008": {
+    "poster": {
+      "path": "08.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "08_d1_verve_v4",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:00",
+        "draw_scale": 1.0,
+        "name": "the verve",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 58.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "08_d2_cp",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:07:30",
+        "draw_scale": 1.0,
+        "name": "COLDPLAY",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      }
+    }
+  },
+  "2009": {
+    "poster": {
+      "path": "09.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "09_d1_MCR",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:03:14",
+        "draw_scale": 1.0,
+        "name": "MY CHEMICAL ROMANCE",
+        "artistname_viewpadding": {
+          "left": 40.0,
+          "bottom": 16.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "09_d2_LP",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:02:30",
+        "draw_scale": 1.0,
+        "name": "LINKIN PARK",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      },
+      "2": {
+        "type": "movie",
+        "path": "09_d3_bey",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:04:00",
+        "draw_scale": 1.0,
+        "name": "BEYONCE",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      }
+    }
+  },
+  "2010": {
+    "poster": {
+      "path": "10.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "10_d1_jay",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:03:30",
+        "draw_scale": 1.0,
+        "name": "JAY-Z",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      },
+      "1": {
+        "type": "img",
+        "path": "10_d2_swy",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": 2.0,
+        "draw_scale": 1.0,
+        "name": "STEVIE WONDER",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 55.0
+        }
+      }
+    }
+  },
+  "2011": {
+    "poster": {
+      "path": "11.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "11_d1_strokes",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:04:15",
+        "draw_scale": 1.0,
+        "name": "THE STROKES",
+        "artistname_viewpadding": {
+          "left": 82.0,
+          "bottom": 64.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "11_d2_rhcp",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:06:00",
+        "draw_scale": 1.0,
+        "name": "RED HOT CHILI PEPPERS",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 59.0
+        }
+      }
+    }
+  },
+  "2012": {
+    "poster": {
+      "path": "12.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "12_d1_gd_v4",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:00",
+        "draw_scale": 1.0,
+        "name": "GREEN DAY",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 51.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "12_d2_riri",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:04:10",
+        "draw_scale": 1.0,
+        "name": "RIHANNA",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 59.0
+        }
+      }
+    }
+  },
+  "2013": {
+    "poster": {
+      "path": "13.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "13_d1_metalica_2.5",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:00",
+        "draw_scale": 1.0,
+        "name": "METALLICA",
+        "artistname_viewpadding": {
+          "left": 32.0,
+          "bottom": 20.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "13_d2_muse",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:01:45",
+        "draw_scale": 1.0,
+        "name": "MUSE",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 59.0
+        }
+      }
+    }
+  },
+  "2014": {
+    "poster": {
+      "path": "14.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "14_d1_am",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:03:00",
+        "draw_scale": 1.0,
+        "name": "ARCTIC MONKEYS",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 59.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "14_d2_queen",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:03:00",
+        "draw_scale": 1.0,
+        "name": "QUEEN + Adam Lambert",
+        "artistname_viewpadding": {
+          "left": 61.0,
+          "bottom": 62.0
+        }
+      }
+    }
+  },
+  "2015": {
+    "poster": {
+      "path": "15.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "15_d1_cb",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:03:50",
+        "draw_scale": 1.0,
+        "name": "THE CHEMICAL BROTHERS",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "15_d2_pw",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:02:00",
+        "draw_scale": 1.0,
+        "name": "PHARRELL WILLIAMS",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 59.0
+        }
+      }
+    }
+  },
+  "2016": {
+    "poster": {
+      "path": "16.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "16_d1_underworld",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:02:15",
+        "draw_scale": 1.0,
+        "name": "UNDERWORLD",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "16_d2_radiohead",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:02:00",
+        "draw_scale": 1.0,
+        "name": "RADIOHEAD",
+        "artistname_viewpadding": {
+          "left": 58.0,
+          "bottom": 54.0
+        }
+      }
+    }
+  },
+  "2017": {
+    "poster": {
+      "path": "17.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "17_d1_calvin",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:40",
+        "draw_scale": 1.0,
+        "name": "CALVIN HARRIS",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "17_d2_FF",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:02:40",
+        "draw_scale": 1.0,
+        "name": "FOO FIGHTERS",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 59.0
+        }
+      }
+    }
+  },
+  "2018": {
+    "poster": {
+      "path": "18.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "18_d1_noel",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:02:00",
+        "draw_scale": 1.0,
+        "name": "NOEL GALLAGHERS HIGH FLYING BIRDS",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      },
+      "1": {
+        "type": "img",
+        "path": "18_d2_beck",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": 2.0,
+        "draw_scale": 1.0,
+        "name": "BECK",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 59.0
+        }
+      }
+    }
+  },
+  "2019": {
+    "poster": {
+      "path": "19.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "19_d1_bz",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:01:45",
+        "draw_scale": 1.0,
+        "name": "Bz",
+        "artistname_viewpadding": {
+          "left": 80.0,
+          "bottom": 80.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "19_d2_rhcp",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:02:00",
+        "draw_scale": 1.0,
+        "name": "RED HOT CHILI PEPPERS",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      },
+      "2": {
+        "type": "movie",
+        "path": "19_d3_cs_v4",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:00",
+        "draw_scale": 1.0,
+        "name": "THE CHAINSMOKERS",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 59.0
+        }
+      }
+    }
+  },
+  "2020": {
+    "poster": {
+      "path": "20.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "19_d2_rhcp",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": 2.0,
+        "draw_scale": 1.0,
+        "name": "RED HOT CHILI PEPPERS",
+        "artistname_viewpadding": {
+          "left": 80.0,
+          "bottom": 70.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "19_d3_cs",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": 2.0,
+        "draw_scale": 1.0,
+        "name": "THE CHAINSMOKERS",
+        "artistname_viewpadding": {
+          "left": 80.0,
+          "bottom": 69.0
+        }
+      }
+    }
+  },
+  "2021": {
+    "poster": {
+      "path": "21.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "19_d2_rhcp",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": 2.0,
+        "draw_scale": 1.0,
+        "name": "RED HOT CHILI PEPPERS",
+        "artistname_viewpadding": {
+          "left": 80.0,
+          "bottom": 70.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "19_d3_cs",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": 2.0,
+        "draw_scale": 1.0,
+        "name": "THE CHAINSMOKERS",
+        "artistname_viewpadding": {
+          "left": 80.0,
+          "bottom": 70.0
+        }
+      }
+    }
+  },
+  "2022": {
+    "poster": {
+      "path": "22.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "22_d1_1975",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:02:00",
+        "draw_scale": 1.0,
+        "name": "THE 1975",
+        "artistname_viewpadding": {
+          "left": 51.0,
+          "bottom": 32.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "22_d2_posty",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:04:50",
+        "draw_scale": 1.0,
+        "name": "POST MALONE",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      }
+    }
+  },
+  "2023": {
+    "poster": {
+      "path": "23_02.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "23_d1_blur_v4",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:00",
+        "draw_scale": 1.0,
+        "name": "BLUR",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      },
+      "1": {
+        "type": "img",
+        "path": "23_d2_kl",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": 2.0,
+        "draw_scale": 1.0,
+        "name": "KENDRICK LAMAR",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      }
+    }
+  },
+  "2024": {
+    "poster": {
+      "path": "24.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "24_d1_maneskin",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:06:00",
+        "draw_scale": 1.0,
+        "name": "MANESKIN",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "24_d2_bmth",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:02:00",
+        "draw_scale": 1.0,
+        "name": "BRING ME THE HORIZON",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      }
+    }
+  },
+  "2025": {
+    "poster": {
+      "path": "25_v2.png",
+      "size": [600, 841]
+    },
+    "headliner": {
+      "0": {
+        "type": "movie",
+        "path": "25_d1_FOB_v4",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 10.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:00:00",
+        "draw_scale": 1.0,
+        "name": "FALL OUT BOY",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      },
+      "1": {
+        "type": "movie",
+        "path": "25_d2_Alicia",
+        "subsection": [0, 0, 1080, 1350],
+        "from_sec": 16.0,
+        "duration": 3.0,
+        "offset_sec_from_file_beginning": "00:00:02:00",
+        "draw_scale": 1.0,
+        "name": "ALICIA KEYS",
+        "artistname_viewpadding": {
+          "left": 60.0,
+          "bottom": 60.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Transition_3>
+	<Glass_X>280</Glass_X>
+	<Glass_Y>515</Glass_Y>
+	<Glass_W>1100</Glass_W>
+	<Glass_H>1123.88</Glass_H>
+	<Radius>836</Radius>
+	<Edge_Softness>200</Edge_Softness>
+	<Refraction>135</Refraction>
+	<Depth>135</Depth>
+	<Dispersion>14.3</Dispersion>
+	<Frost>0</Frost>
+	<Light_Intensity>0.17</Light_Intensity>
+	<Light_Angle>-35</Light_Angle>
+	<Blend>1</Blend>
+	<Opacity>1</Opacity>
+	<Tint>220, 240, 255, 255</Tint>
+	<Tint_Amount>0</Tint_Amount>
+	<Bend_Falloff_Power>1.505</Bend_Falloff_Power>
+</Transition_3>
+<BG_Shader>
+	<color0>0.00392157, 0.6, 0.886275, 1</color0>
+	<color1>0.156863, 0.156863, 0.494118, 1</color1>
+	<color2>0.992157, 0.81597, 0.508188, 1</color2>
+	<color3>0.858824, 0.381084, 0.46012, 1</color3>
+	<gradientRadius>0.24265</gradientRadius>
+	<colorMass0>2.94</colorMass0>
+	<colorMass1>1.26</colorMass1>
+	<colorMass2>0.24</colorMass2>
+	<colorMass3>0.28</colorMass3>
+</BG_Shader>

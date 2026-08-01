@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Transition_3>
+	<Glass_X>280</Glass_X>
+	<Glass_Y>515</Glass_Y>
+	<Glass_W>1100</Glass_W>
+	<Glass_H>1123.88</Glass_H>
+	<Radius>946</Radius>
+	<Edge_Softness>200</Edge_Softness>
+	<Refraction>112.5</Refraction>
+	<Depth>500</Depth>
+	<Dispersion>0</Dispersion>
+	<Frost>0</Frost>
+	<Light_Intensity>0.17</Light_Intensity>
+	<Light_Angle>-35</Light_Angle>
+	<Blend>1</Blend>
+	<Opacity>1</Opacity>
+	<Tint>220, 240, 255, 255</Tint>
+	<Tint_Amount>0</Tint_Amount>
+	<Bend_Falloff_Power>0.907</Bend_Falloff_Power>
+</Transition_3>
