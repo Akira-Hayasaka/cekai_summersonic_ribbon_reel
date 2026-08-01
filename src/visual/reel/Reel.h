@@ -48,40 +48,7 @@ public:
 	};
 
 	void on_SequencerKeyframeEvent(SequencerKeyframeEvent & e) {
-		if (e.trackName == "CamZoom") {
-			if (e.keyframeName == "in") {
-				zoom_in();
-			} else if (e.keyframeName == "out") {
-				zoom_out();
-				poster_reel->showAllPosters();
-			} else if (e.keyframeName == "in_custom") {
-				float zoomindur = 0.25;
-				zoom_in(2.0, zoomindur);
-				auto lastidx = Globals::package["target_year"].size() - 1;
-				int yearInt = Globals::package["target_year"][lastidx].get<int>();
-				// 例: 2005 -> 5, 2025 -> 25
-				int yearTwoDigit = yearInt % 100;
-				poster_reel->showOnlyTargetPoster(yearTwoDigit);
 
-				showAllPostersDelaySec = zoomindur * 1.2f;
-				showAllPostersStartSec = Globals::timeline->getCurrentTimeSec();
-				showAllPostersPending = true;
-
-				float delay = 0.35f;
-				ofNotifyEvent(Transition::first_movie_play_start_event, delay);
-			}
-		}
-		if (e.trackName == "Reel") {
-			if (e.keyframeName == "show") {
-				show();
-			} else if (e.keyframeName == "hide") {
-				hide();
-			} else if (e.keyframeName == "poster_only_draw") {
-				enablePosterOnlyDraw();
-			} else if (e.keyframeName == "poster_and_headliner_draw") {
-				disablePosterOnlyDraw();
-			}
-		} 
 	}
 
 	void update() {

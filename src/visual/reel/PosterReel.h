@@ -71,7 +71,7 @@ public:
 		idle_pos = glm::vec2(0, 2200);
 		active_pos = glm::vec2(0, 0);
 		out_pos = glm::vec2(0, -18000);
-		cur_pos = idle_pos;
+		cur_pos = active_pos;
 		lastUpdateTimeSec = Globals::timeline->getCurrentTimeSec();
 
 		ofAddListener(Globals::sequencer->keyframeEvent, this, &PosterReel::on_SequencerKeyframeEvent);
