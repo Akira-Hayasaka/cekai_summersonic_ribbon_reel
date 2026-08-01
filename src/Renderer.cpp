@@ -175,9 +175,9 @@ void Renderer::begin_rendering(
 	}
 
 	render_base_path = base_dir.generic_string();
-	video_only_path = (base_dir / "video_only.mp4").generic_string();
+	video_only_path = (base_dir / "video_only.mov").generic_string();
 	audio_wav_path = (base_dir / "audio.wav").generic_string();
-	muxed_video_path = (base_dir / "render.mp4").generic_string();
+	muxed_video_path = (base_dir / "render.mov").generic_string();
 
 	ofLogNotice("Renderer::begin_rendering")
 		<< "fps=" << render_fps
@@ -355,11 +355,7 @@ const std::string Renderer::get_ffmpeg_cmd(
 	"-video_size " + std::to_string(w) + "x" + std::to_string(h) + " "
 	"-framerate " + ofToString(fps, 6) + " "
 	"-i pipe:0 "
-	"-c:v libx264 "
-	"-preset medium "
-	"-crf 16 "
-	"-g 1 "
-	"-bf 0 "
-	"-pix_fmt yuv420p " +
+	"-c:v rawvideo "
+	"-pix_fmt rgb24 " +
 	quote_path(vid_name);
 }
