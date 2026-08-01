@@ -153,7 +153,6 @@ Visual::Visual()
 				posters.push_back(poster);
 			}
 
-			poster_history = std::make_unique<Poster_History>(posters);
 
 			// ヘッドライナーは対象年以外はスキップ
 			if (!targetYears.empty() && targetYears.find(year) == targetYears.end())
@@ -237,19 +236,14 @@ Visual::Visual()
 		}
 	}
 
-	bg = std::make_unique<BG>();
 	reel = std::make_unique<Reel>(posters, headliners);
-	infoText = std::make_unique<InfoText>();
 
 	// Transition には、実際にヘッドライナーが読み込まれた年の一覧(ソート・重複排除済み)を渡す。
 	// begin/end の連続範囲ではなく、この一覧に基づいて周回することで、target_year に含まれない
 	// 年(例: 2020, 2021)が誤って対象に含まれることを防ぐ。
 	std::sort(headlinerYears.begin(), headlinerYears.end());
 	headlinerYears.erase(std::unique(headlinerYears.begin(), headlinerYears.end()), headlinerYears.end());
-	transition = std::make_unique<Transition>(headlinerYears, posters, headliners);
 
-	warper = std::make_unique<Warper>();
-	twist = std::make_unique<Twist>();
 
 	ofAddListener(Globals::sequencer->keyframeEvent, this, &Visual::on_SequencerKeyframeEvent);
 }
@@ -258,7 +252,6 @@ void Visual::on_SequencerKeyframeEvent(SequencerKeyframeEvent & e) {
 	if (e.trackName == "HeadlinerReel") {
 		if (e.keyframeName == "in") {
 			reel->setHeadlinerDrawEnabled(true);
-			transition->setHeadlinerDrawEnabled(false);
 			for (auto & headliner : headliners)
 			{
 				if (headliner)
@@ -271,7 +264,6 @@ void Visual::on_SequencerKeyframeEvent(SequencerKeyframeEvent & e) {
 	if (e.trackName == "Transition") {
 		if (e.keyframeName == "in") {
 			reel->setHeadlinerDrawEnabled(false);
-			transition->setHeadlinerDrawEnabled(true);
 			for (auto & headliner : headliners)
 			{
 				if (headliner)
@@ -279,26 +271,13 @@ void Visual::on_SequencerKeyframeEvent(SequencerKeyframeEvent & e) {
 					headliner->setAudioEnabled(true);
 				}
 			}
-			transition->start();
 		}
 	}
 	if (e.trackName == "InfoText") {
-		if (e.keyframeName == "in") {
-			infoText->in();
-		} else if (e.keyframeName == "out") {
-			infoText->out();
-		} else if (e.keyframeName == "fade_in") {
-			infoText->fadeIn();
-		} else if (e.keyframeName == "fade_out") {
-			infoText->fadeOut();
-		}
+
 	}
 	if (e.trackName == "BG") {
-		if (e.keyframeName == "spin") {
-			bg->spin();
-		} else if (e.keyframeName == "idle") {
-			bg->idle();
-		}
+
 	}
 	if (e.trackName == "Visual") {
 		if (e.keyframeName == "make_reel_front") {
@@ -313,57 +292,13 @@ void Visual::update()
 	{
 		headliner->update();
 	}
-	poster_history->update();
-	bg->update();
+
 	reel->update();
-	transition->update();
-	infoText->update();
-
-	if (!b_make_reel_front) {
-		warper->update();
-		warper->begin();
-		transition->draw();
-		warper->end();
-
-		twist->update();
-		twist->begin();
-		infoText->draw();
-		twist->end();
-	} else {
-		warper->update();
-		warper->begin();
-		transition->draw();
-		if (!twist->isAnimating()) {
-			reel->draw();
-		}
-		warper->end();
-
-		twist->update();
-		if (twist->isAnimating()) {
-			twist->begin();
-			reel->draw();
-			infoText->draw();
-			twist->end();
-		}
-	}
 }
 
 void Visual::draw()
 {
-	bg->draw();
-
-	if (!b_make_reel_front) {
-		reel->draw();
-	}
-	warper->draw();
-
-	transition->drawArtistNames();
-
-	if (!twist->isAnimating()) {
-		infoText->draw();
-	}
-
-	twist->draw();
+	reel->draw();
 }
 
 std::vector<std::shared_ptr<Headliner>>& Visual::getHeadliners()

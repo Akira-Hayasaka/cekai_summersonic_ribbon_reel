@@ -15,7 +15,6 @@ public:
 		std::vector<std::shared_ptr<Poster>> posters,
 		std::vector<std::shared_ptr<Headliner>> headliners) {
 
-		year_reel = std::make_unique<YearReel>();
 		poster_reel = std::make_unique<PosterReel>(std::move(posters));
 		//headliner_reel = std::make_unique<HeadlinerReel>(std::move(headliners));
 
@@ -32,6 +31,12 @@ public:
 		zoom_scale = 0.5f;
 		zoom_duration_sec = 1.9;
 		zoom_anim_duration_sec = zoom_duration_sec;
+
+				const float s = zoom_scale;
+		const float px = zoom_pt.x - (zoom_pt.x - center.x) / s;
+		const float py = zoom_pt.y - (zoom_pt.y - center.y) / s;
+		cam.setScale(zoom_scale, zoom_scale, 1.0f);
+		cam.setPosition(px, py, 1000.0f);
 
 		zoom_restore_pos = glm::vec3(center.x, center.y, 1000.0f); // Z を明示的に 1000.0f に
 		zoom_restore_scale = glm::vec3(1.0f, 1.0f, 1.0f);
@@ -85,7 +90,6 @@ public:
 
 		updateZoom();
 		updateShowAllPostersDelay();
-		year_reel->update();
 		poster_reel->update();
 		//headliner_reel->update();
 	}
@@ -98,12 +102,6 @@ public:
 		cam.end();
 
 		if (posterOnlyDrawEnabled_) return;
-
-		//headliner_reel->draw();
-
-		cam.begin();
-		year_reel->draw();
-		cam.end();
 	}
 
 	void enablePosterOnlyDraw() { posterOnlyDrawEnabled_ = true; }
@@ -189,7 +187,6 @@ public:
 
 	void reset_reels() {
 		state = State::idle;
-		year_reel->reset();
 		poster_reel->reset();
 		//headliner_reel->reset();
 		zoom_state = ZoomState::idle;
@@ -241,7 +238,6 @@ private:
 	ofCamera cam;
 	glm::vec3 center;
 
-	std::unique_ptr<YearReel> year_reel;
 	std::unique_ptr<PosterReel> poster_reel;
 	//std::unique_ptr<HeadlinerReel> headliner_reel;
 

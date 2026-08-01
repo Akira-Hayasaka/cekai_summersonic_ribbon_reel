@@ -30,13 +30,7 @@ private:
 	std::vector<std::shared_ptr<Headliner>> headliners;
 	std::vector<std::shared_ptr<Poster>> posters;
 
-	std::unique_ptr<Poster_History> poster_history;
-	std::unique_ptr<BG> bg;
 	std::unique_ptr<Reel> reel;
-	std::unique_ptr<Transition> transition;
-	std::unique_ptr<InfoText> infoText;
-	std::unique_ptr<Warper> warper;
-	std::unique_ptr<Twist> twist;
 
 	bool b_make_reel_front = false;
 };
