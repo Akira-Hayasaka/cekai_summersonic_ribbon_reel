@@ -356,7 +356,10 @@ const std::string Renderer::get_ffmpeg_cmd(
 	"-video_size " + std::to_string(w) + "x" + std::to_string(h) + " "
 	"-framerate " + ofToString(fps, 6) + " "
 	"-i pipe:0 "
-	"-c:v rawvideo "
-	"-pix_fmt rgba " +
+	"-c:v prores_ks "
+	"-profile:v 4 "
+	"-pix_fmt yuva444p10le "
+	"-alpha_bits 16 "
+	"-vendor apl0 " +
 	quote_path(vid_name);
 }
